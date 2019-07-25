@@ -1,0 +1,119 @@
+import java.awt.*;
+import java.awt.event.*;
+import javax.swing.*;
+import java.text.NumberFormat;
+
+public class Circle_GUI_Buttons_TextBoxArea_Formatted_Pencere01 extends JFrame {
+    
+private JTextField girisKutusu;
+private JTextArea cikisAlani;
+private JButton dugmeCikis;
+private JScrollPane kayanCubuk;
+private JButton dugmeHesap;
+private JButton dugmeTemizle;
+private javax.swing.JLabel etiket;
+
+NumberFormat deger = NumberFormat.getNumberInstance();
+    
+public Circle_GUI_Buttons_TextBoxArea_Formatted_Pencere01() {
+    
+setTitle("DAİRE HESAPLARI (CIRCLE CALCULATIONS)");
+setLocation(400,400);
+setSize(500,300);
+setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+
+etiket = new javax.swing.JLabel();
+etiket.setText("Yarıçap giriniz (Enter radius) : ");
+girisKutusu = new JTextField();
+cikisAlani = new JTextArea();
+kayanCubuk = new JScrollPane(cikisAlani);
+dugmeHesap = new JButton();
+dugmeTemizle = new JButton();
+dugmeCikis = new JButton();
+
+girisKutusu.setEditable(true);
+girisKutusu.setFocusable(true);
+cikisAlani.setEditable(false);
+
+dugmeCikis.setText("ÇIKIŞ (Exit)");
+dugmeHesap.setText("Hesapla (Calculate)");
+dugmeTemizle.setText("Temizle (Clear)");
+
+girisKutusu.addActionListener(new ActionListener() {
+    public void actionPerformed(ActionEvent evt) {
+        dugmeHesapTiklandi();
+    }
+});
+dugmeCikis.addActionListener(new ActionListener() {
+    public void actionPerformed(ActionEvent evt) {
+        System.exit(0);
+    }
+});
+dugmeHesap.addActionListener(new ActionListener() {
+    public void actionPerformed(ActionEvent evt) {
+        dugmeHesapTiklandi();
+    }
+});
+dugmeTemizle.addActionListener(new ActionListener() {
+    public void actionPerformed(ActionEvent evt) {
+        girisKutusu.setText("");
+        cikisAlani.setText("");
+    }
+});
+
+JPanel pano = new JPanel();
+pano.setLayout(new GridLayout(6,1));
+pano.add(etiket);
+pano.add(girisKutusu);
+pano.add(kayanCubuk);
+pano.add(dugmeHesap);
+pano.add(dugmeTemizle);
+pano.add(dugmeCikis);
+//getContentPane().add(pano);
+add(pano);
+setVisible(true);
+//pack();
+}
+                                     
+private void dugmeHesapTiklandi() {
+        String sr = girisKutusu.getText();
+        if (sr.length() == 0 )
+            cikisAlani.append("Blank input\n");
+        else {
+            if (sr.matches("[0-9]*")) {
+            double r = Double.parseDouble(sr);
+            cikisAlani.append("Circumference : " + deger.format(2*Math.PI*r) +"\n");
+            cikisAlani.append("Area : " + deger.format(Math.PI*r*r)+"\n"); }
+            else {
+            cikisAlani.append("Invalid input\n");
+            }
+        }
+}                                          
+                                           
+public static void main(String args[]) {
+            new Circle_GUI_Buttons_TextBoxArea_Formatted_Pencere01();
+}
+}
+
+
+import javax.swing.*;
+
+public class Circle_GUI_Buttons_TextBoxArea_Formatted_JOptionMessage_Pencere2 {
+    
+public static void main(String args[]) {
+      JFrame daire_Pencere = new JFrame ("DAİRE HESAPLARI (CIRCLE CALCULATIONS)");
+      daire_Pencere.setSize(500,200);
+      daire_Pencere.setDefaultCloseOperation (JFrame.EXIT_ON_CLOSE);
+      daire_Pencere.add(new Circle_GUI_Buttons_TextBoxArea_Formatted_JOptionMessage_Pano2());
+      //daire_Pencere.pack();
+      daire_Pencere.setVisible(true);
+}
+    
+}
+
+
+
+import java.awt.*;
+import java.awt.event.*;
+import javax.swing.*;
+import java.text.NumberFormat;
