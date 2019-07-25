@@ -1,0 +1,17 @@
+import java.util.Scanner; 
+public class CircleCalc {
+
+    public static void main(String[] args) {
+        java.util.Scanner sc = new java.util.Scanner( System.in ); 
+        double r; 
+
+        System.out.print( "\nEnter radius : " ); 
+        r = giris.nextDouble();
+    
+        double cevre = 2 * Math.PI *r;
+        double alan = Math.PI * r * r; 
+        System.out.println( "Circumference     : " + cevre );
+        System.out.println( "Area              : " + alan );
+
+    
+} 
