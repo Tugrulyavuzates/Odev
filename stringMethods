@@ -1,0 +1,27 @@
+public class String {
+   public static void main (String[] args)    {
+      String deyis = "Hava her zaman";     
+      String degisim1, degisim2, degisim3, degisim4, degisim5;
+      char degisim6 ;
+
+      System.out.print ("\nWording of deyis : \"" + deyis + "\"\n");
+      System.out.println ("Length of deyis : " + deyis.length());
+
+      degisim1 = deyis.concat(" soguktur.");
+      degisim2 = degisim1.toUpperCase();
+      degisim3 = degisim2.replace ('U', 'X');
+      degisim4 = degisim3.substring (3, 10); //Start at 3rd, 10th exclusive
+      degisim5 = "   " + degisim4.concat("   ");
+      degisim6 = degisim4.charAt(degisim4.length()-1);
+      
+      System.out.println ("degisim #1: " + degisim1);
+      System.out.println ("degisim #2: " + degisim2);
+      System.out.println(degisim1.compareTo(degisim2)); // 1>2 +, 1=2 0, 1<2 -
+      System.out.println(degisim1.compareToIgnoreCase(degisim2));
+      System.out.println ("degisim #3: " + degisim3);
+      System.out.println ("degisim #4: " + degisim4);
+      System.out.println ("degisim #5: " + degisim5.trim());
+      System.out.println ("Last character of degisim #4: " + degisim6);     
+      System.out.println ("Length of degisim4 : " + degisim4.length());
+   }
+}
