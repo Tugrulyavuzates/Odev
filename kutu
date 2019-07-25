@@ -1,0 +1,13 @@
+public class Kutu1 {
+
+    public static void main(String[] args) {
+        Kutu1 kutu1 = new Kutu1();
+        kutu1.genislik = 5;
+        kutu1.derinlik = 10;
+        kutu1.yukseklik = 15;
+        
+        double kutuVolume = kutu1.genislik * kutu1.derinlik * kutu1.yukseklik ;
+        System.out.format("Volume of Box : %.3f\n   Width  : %.1f\n   Depth  : %.2f%n   Height : %.3f%n", 
+                kutuVolume, kutu1.genislik, kutu1.derinlik, kutu1.yukseklik);      
+    }
+}
