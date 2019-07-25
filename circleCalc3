@@ -1,0 +1,23 @@
+import java.util.Scanner;
+
+import java.util.Scanner;
+public class CircleCalc3 {
+
+    public static void main(String[] args) {
+        Scanner giris = new Scanner( System.in ); 
+        double r; 
+        String kont = "Y";
+        do {
+        System.out.print( "\nEnter radius : " ); 
+        r = giris.nextDouble();
+    
+        double cevre = 2 * Math.PI *r; 
+        double alan = Math.PI * r * r; 
+        System.out.println( "Circumference     : " + cevre );
+        System.out.println( "Area              : " + alan );
+        System.out.print("Continue : ? ");
+        kont = giris.next();}
+        while ( kont.equalsIgnoreCase("y") );
+
+    } 
+} 
